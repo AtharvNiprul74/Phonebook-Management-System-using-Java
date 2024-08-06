@@ -112,7 +112,8 @@ public class mainform extends JFrame {
 			        smt.setString(3,textField_2.getText());
 					smt.executeUpdate();
 					JOptionPane.showMessageDialog(null,"Contact Saved!","Phonebook Management System",JOptionPane.INFORMATION_MESSAGE);
-		            Statement smt1=conn.createStatement();
+		            @SuppressWarnings("unused")
+					Statement smt1=conn.createStatement();
 					ResultSet rs=smt.executeQuery("SELECT * FROM phonebook.contacts;");		
 					DefaultTableModel model=(DefaultTableModel) table.getModel();
 					model.setRowCount(0);
@@ -153,6 +154,7 @@ public class mainform extends JFrame {
 							smt1.setString(1, textField.getText());
 							smt1.setString(2, textField_1.getText());
 							smt1.setString(3, textField_2.getText());
+							@SuppressWarnings("unused")
 							int i=smt1.executeUpdate();
 							JOptionPane.showMessageDialog(btnNewButton_1,"Contact Updated!","Phonebook Management System",JOptionPane.INFORMATION_MESSAGE);
 				
@@ -204,7 +206,8 @@ public class mainform extends JFrame {
 								textField_1.setText("");
 								textField_2.setText("");
  
-    								Statement st=conn.createStatement();
+    								@SuppressWarnings("unused")
+									Statement st=conn.createStatement();
 									rs=smt.executeQuery("SELECT * FROM phonebook.contacts;");		
 									DefaultTableModel model=(DefaultTableModel) table.getModel();
 									model.setRowCount(0);
